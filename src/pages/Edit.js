@@ -12,34 +12,37 @@ function Edit() {
   const params = useParams();
   const id = params.id;
 
-  // const handleSubmit = () => {
-  //   if (name && image && email && address && about) {
-  //     const studentData = {
-  //       name: name, image: image, email: email, address: address, about: about
-  //     }
+  const handleSubmit = () => {
+    if (name && image && email && address && about) {
+      const studentData = {
+        name: name, image: image, email: email, address: address, about: about
+      }
 
-  //     axios.post("http://localhost:3003/create-student/", studentData , {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data'
-  //       }
-  //     }
-  //     ).then( (res) => {
-  //       console.log(res.data)
-  //       if(res.data.status == true) {
-  //         alert("Successfully created");
-  //       }else {
-  //         alert("something went wrong")
-  //       }
-  //     })
-  //   }
+      axios.put("http://localhost:3003/update-student/" + id, studentData , {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      ).then( (res) => {
+        console.log(res.data)
+        if(res.data.status == true) {
+          alert("Successfully updated");
+        }else {
+          alert("something went wrong")
+        }
+      })
+    }
 
-  // }
+  }
 
   useEffect(() => {
     axios.get("http://localhost:3003/student/" + id).then((res) => {
       console.log(res.data.student);
       if(res.data.status == true) {
         setName(res.data.student.name);
+        setEmail(res.data.student.email);
+        setAddress(res.data.student.address);
+        setAbout(res.data.student.about);
       }
     })
   }, []);
@@ -66,9 +69,9 @@ function Edit() {
           </div>
           <div className="mb-3">
             <label htmlFor="exampleFormControlTextarea1" className="form-label">About</label>
-            <textarean value={about} onChange={(e) => { setAbout(e.target.value) }} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarean>
+            <textarea value={about} onChange={(e) => { setAbout(e.target.value) }} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-          <button className='btn btn-primary'>Create</button>
+          <button onClick={handleSubmit} className='btn btn-primary'>Update</button>
         </div>
       </form>
     </>
