@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Signup from "./pages/Signup";
 import StudentDetail from "./pages/StudentDetail"
+import Edit from "./pages/Edit"
 
 export const authContext = createContext("");
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/logout' element={<Logout />}/>
         <Route path="/signup" element={<Signup />}/>
         <Route path='/student/:id' element={<StudentDetail />} />
+        <Route path='/edit/:id' element={<Edit />} />
       </Routes>
 
       </div>

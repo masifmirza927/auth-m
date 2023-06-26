@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 
 function StudentDetail() {
   const [student, setStudent] = useState(null);
@@ -32,6 +32,7 @@ const handleDelete = () => {
     return (
       <>
         {student.name}
+        <Link to={`/edit/${id}`} className="btn btn-info mx-2">Edit</Link>
         <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
       </>
     )
