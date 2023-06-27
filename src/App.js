@@ -10,6 +10,14 @@ import Logout from "./pages/Logout";
 import Signup from "./pages/Signup";
 import StudentDetail from "./pages/StudentDetail"
 import Edit from "./pages/Edit"
+import ViewPdf from './components/ViewPdf';
+
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
+    
+//core
+import "primereact/resources/primereact.min.css";
+
 
 export const authContext = createContext("");
 
@@ -30,6 +38,7 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path='/student/:id' element={<StudentDetail />} />
         <Route path='/edit/:id' element={<Edit />} />
+        <Route path='/viewpdf/:id' element={<ViewPdf />} />
       </Routes>
 
       </div>

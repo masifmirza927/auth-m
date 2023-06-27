@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Editor } from 'primereact/editor';
 
 function Create() {
   const [name, setName] = useState("");
@@ -64,10 +65,13 @@ function Create() {
             <label htmlFor="address" className="form-label">Address</label>
             <input onChange={(e) => { setAddress(e.target.value) }} type="text" className="form-control" id="address" />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label htmlFor="exampleFormControlTextarea1" className="form-label">About</label>
             <textarea onChange={(e) => { setAbout(e.target.value) }} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
+          </div> */}
+
+          <Editor value={about} onTextChange={(e) => setAbout(e.htmlValue)} style={{ height: '320px' }} />
+
           <button onClick={handleSubmit} className='btn btn-primary'>Create</button>
         </div>
       </form>

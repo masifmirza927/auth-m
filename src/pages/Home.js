@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import {Link} from "react-router-dom"
+import Search from './Search';
 
 function Home() {
   const [students, setStudents] = useState([]);
@@ -28,6 +29,9 @@ function Home() {
   } else {
     return (
       <>
+      <div className='search'>
+        <Search />
+      </div>
         <div className='row'>
           {
             students.map((student) => {

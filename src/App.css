@@ -1,6 +1,54 @@
-.inputError  {
-    border-color: rgb(255, 0, 0);
-  }
-  .errTxt {
-    color:  rgb(255, 0, 0);
-  }
+.searchInputBox {
+  position: relative;
+}
+.searchInputBox > input {
+  padding: 15px;
+}
+.searchInputBox > input:focus{
+  outline-width: 0;
+  box-shadow: none;
+  border-color: black;
+}
+.dropDownBox {
+  position: absolute;
+    z-index: 9;
+    background: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 6px 10px #0000002b;
+    color: #fff;
+}
+.dropDownBox ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.dropDownBox ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.dropDownBox ul li a:hover {
+  cursor: pointer;
+    background:#347ab7 ;
+    border-radius:.2;
+    color: #fff;
+}
+
+
+
+/* user profile page */
+.box {
+  width: 600px;
+  margin: 40px auto;
+  padding: 10px 20px 20px 20px;
+  text-align: center;
+  box-shadow: 0px 6px 1px #0000009e;
+  position: relative;
+}
+.box > img {
+  width: 200px;
+    margin: 0 auto;
+    display: block;
+    border: 6px dashed #bf119d;
+}
