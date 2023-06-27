@@ -53,7 +53,7 @@ function Edit() {
         <div style={{ width: "600px" }} className='mx-auto'>
           <div className="mb-3">
             <label htmlFor="formFile" className="form-label">Image</label>
-            <input onChange={(e) => { setImage(e.target.files[0]) }} className="form-control" type="file" id="formFile" />
+            <input onChange={(e) => { setImage(e.target.files[0]) }} className="form-control" type="file" id="formFile" accept="image/*" />
           </div>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
